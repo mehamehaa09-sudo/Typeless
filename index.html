@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typeless — Zero-Typing Notepad</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="scanline"></div>
+
+  <header class="topbar">
+
+    <div class="brand">
+      <span class="brand-mark">)))</span>
+      <span class="brand-name">Typeless</span>
+    </div>
+
+    <div class="topbar-controls">
+
+      <select id="langSelect" class="lang-select" aria-label="Recognition language">
+        <option value="en-US">English</option>
+        <option value="ta-IN">Tamil</option>
+        <option value="hi-IN">Hindi</option>
+        <option value="te-IN">Telugu</option>
+      </select>
+
+      <button
+        id="themeToggle"
+        class="icon-btn"
+        title="Toggle Light / Dark Mode"
+        aria-label="Toggle Theme">
+        ◐
+      </button>
+
+      <button
+        id="paletteBtn"
+        class="icon-btn"
+        title="Accent Color"
+        aria-label="Accent Color">
+        🎨
+      </button>
+
+      <div id="palette" class="palette hidden">
+
+        <button class="theme-dot" title="Aqua" data-color="#5EEAD4" style="background:#5EEAD4"></button>
+
+        <button class="theme-dot" title="Purple" data-color="#8B5CF6" style="background:#8B5CF6"></button>
+
+        <button class="theme-dot" title="Yellow" data-color="#FACC15" style="background:#FACC15"></button>
+
+        <button class="theme-dot" title="Green" data-color="#22C55E" style="background:#22C55E"></button>
+
+        <button class="theme-dot" title="Pink" data-color="#EC4899" style="background:#EC4899"></button>
+
+        <button class="theme-dot" title="Blue" data-color="#3B82F6" style="background:#3B82F6"></button>
+
+        <button class="theme-dot" title="Grey" data-color="#94A3B8" style="background:#94A3B8"></button>
+
+        <button class="theme-dot" title="Maroon" data-color="#7F1D1D" style="background:#7F1D1D"></button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="stage">
+
+    <div class="channel-plate">
+
+      <div class="freq-label">CH. 01 — LIVE</div>
+
+      <div class="mic-wrap">
+
+        <div class="ring ring-3"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-1"></div>
+
+        <button id="micBtn" class="mic-btn" aria-label="Start Recording">
+
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+
+            <line x1="12" y1="19" x2="12" y2="23"/>
+
+            <line x1="8" y1="23" x2="16" y2="23"/>
+
+          </svg>
+
+        </button>
+
+      </div>
+
+      <p class="status-line" id="statusLine">
+
+        Click to talk, or hold <kbd>Space</kbd>
+
+      </p>
+
+    </div>
+
+    <section class="transcript-panel">
+
+      <div class="transcript-header">
+
+        <span class="transcript-title">
+
+          TRANSCRIPT
+
+        </span>
+
+        <span class="transcript-count" id="wordCount">
+
+          0 words
+
+        </span>
+
+      </div>
+
+      <div
+        id="transcript"
+        class="transcript-body"
+        tabindex="0"
+        data-placeholder="Your words will show up here as you speak...">
+      </div>
+
+      <div class="action-row">
+
+        <button id="copyBtn" class="action-btn primary">
+
+          Copy
+
+        </button>
+
+        <button id="grammarBtn" class="action-btn">
+
+          Improve Grammar
+
+        </button>
+
+        <button id="clearBtn" class="action-btn">
+
+          Clear
+
+        </button>
+
+        <span id="copiedToast" class="copied-toast">
+
+          Copied to Clipboard!
+
+        </span>
+
+        <span id="grammarStatus" class="copied-toast">
+
+        </span>
+
+      </div>
+
+    </section>
+
+    <p id="compatHint" class="hint"></p>
+
+  </main>
+
+  <footer class="footer">
+
+    Built with the Web Speech API · Works best in Chrome / Edge
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
