@@ -176,7 +176,7 @@
   // --- Improve Grammar button ---
   // Sends the current transcript to our own Flask backend, which forwards it
   // to the Anthropic API and returns a grammar-corrected version.
-  const BACKEND_URL = 'https://mehamehaa09-sudo.github.io/typeless/Typeless/';
+  const BACKEND_URL = 'https://github.com/mehamehaa09-sudo/Typeless';
 
   grammarBtn.addEventListener('click', async () => {
     const text = finalTranscript.trim();
