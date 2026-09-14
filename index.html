@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typeless — Zero-Typing Notepad</title>
+    <meta name="description" content="Zero-typing speech-to-text notepad with persistent theme preferences, customizable accent colors, and audio-driven transcription." />
+    <meta property="og:title" content="Typeless — Zero-Typing Notepad" />
+    <meta property="og:description" content="Zero-typing speech-to-text notepad with persistent theme preferences, customizable accent colors, and audio-driven transcription." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('typeless_theme_mode');
+          if (theme === 'light') {
+            document.documentElement.classList.add('light');
+            document.body && document.body.classList.add('light');
+          } else if (theme === 'dark') {
+            document.documentElement.classList.remove('light');
+            document.body && document.body.classList.remove('light');
+          }
+          var accent = localStorage.getItem('typeless_accent_color');
+          if (accent) {
+            document.documentElement.style.setProperty('--accent', accent);
+            document.documentElement.style.setProperty('--accent-dim', accent + '33');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

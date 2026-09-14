@@ -1,0 +1,10 @@
+{
+  "name": "Typeless — Zero-Typing Notepad",
+  "description": "Zero-typing speech-to-text notepad with persistent theme preferences, customizable accent colors, and audio-driven transcription.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
